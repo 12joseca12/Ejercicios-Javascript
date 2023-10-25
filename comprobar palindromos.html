@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>¿Palíndromo?</title>
+
+<style>
+    div{
+        background: rgb(255,255,255);
+        background: linear-gradient(153deg, rgba(255,255,255,1) 0%, rgba(73, 187, 204, 0.336) 47%, rgba(255,255,255,1) 87%);
+        background-repeat: repeat-y;
+        background-size: cover;
+        padding: 5px;
+    }
+</style>
+
+</head>
+<body>
+
+  <div>
+    <h1>Comprobador de Palíndromos</h1>
+    <label for="palabra">Ingresa una palabra:</label>
+    <input type="text" id="palabra" placeholder="Escribe una palabra...">
+    <button onclick="comprobarPalindromo()">Comprobar</button>
+    <p id="resultado"></p>
+ </div>
+
+
+    <script>
+        function esPalindromo(palabra) {
+            palabra = palabra.replace(/\s/g, '').toLowerCase();
+            return palabra === palabra.split('').reverse().join('');
+        }
+
+        function comprobarPalindromo() {
+            const inputPalabra = document.getElementById('palabra');
+            const resultado = document.getElementById('resultado');
+            const palabra = inputPalabra.value;
+            
+            if (esPalindromo(palabra)) {
+                resultado.textContent = `"${palabra}" es un palíndromo.`;
+            } else {
+                resultado.textContent = `"${palabra}" no es un palíndromo.`;
+            }
+        }
+    </script>
+</body>
+</html>
