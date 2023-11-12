@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const packOfGifts = ["book", "doll", "ball"];
+        const reindeers = ["dasher", "dancer"];
+        var giftsWeight = 0;
+        var deersWeight = 0;
+        var weight = 0;
+        
+    
+        var distributeGifts = (packOfGifts, reindeers) => {
+            for (let index = 0; index < packOfGifts.length; index++) {
+                giftsWeight += packOfGifts[index].length;
+                console.log(giftsWeight);
+            }
+            console.log(giftsWeight);
+    
+            for (let index = 0; index < reindeers.length; index++) {
+                deersWeight += reindeers[index].length * 2;
+                console.log(deersWeight);
+            }
+            console.log(deersWeight);
+    
+            
+            console.log(weight);
+            weight = Math.floor(deersWeight / giftsWeight);
+            console.log(weight);
+            return weight;
+        };
+    
+        var total = distributeGifts(packOfGifts, reindeers);
+        console.log("El número de cajas de regalos que se pueden llevar son: ", total);
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

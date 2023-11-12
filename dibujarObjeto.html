@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            border: 1px solid black;
+        }
+        td{
+            border: 1px dotted black;
+        }
+    </style>
+    <script>
+        function Coche(marca, modelo, caballos){
+            this.marca=marca;
+            this.modelo=modelo;
+            this.caballos=caballos;
+        }
+        var coche1=new Coche("Seat", "Leon", 1000);
+        var coche2=new Coche("Nissan", "GTR34", 900);
+        var coche3=new Coche("Toyota", "Supra", 800);
+        var arrCoches=[coche1, coche2, coche3];
+
+        
+        Coche.prototype.pintar= function(color){
+            this.color=color;
+        }
+
+        document.write("<table>");
+        document.write("<tr><td>Marca</td><td>Modelo</td><td>Potencia</td><td>Color</td></tr>");
+        arrCoches.forEach(coche => {
+            var color=prompt(`Introduzca color para el ${coche.marca} ${coche.modelo}`);
+            coche.pintar(color);
+            document.write(`<tr><td>${coche.marca}</td><td>${coche.modelo}</td><td>${coche.caballos}</td><td>${coche.color}</td></tr>`);
+        });
+        document.write("</table>");
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
