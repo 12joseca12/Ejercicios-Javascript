@@ -28,6 +28,17 @@
             this.color=color;
         }
 
+        
+
+        Array.prototype.shuffle=function(){
+           for (let i = this.length-1; i >0; i--) {
+            const j=Math.floor(Math.random()*i+1);
+            [this[i], this[j]]=[this[j], this[i]];
+           }
+        };
+
+        arrCoches.shuffle();
+
         document.write("<table>");
         document.write("<tr><td>Marca</td><td>Modelo</td><td>Potencia</td><td>Color</td></tr>");
         arrCoches.forEach(coche => {
@@ -36,8 +47,6 @@
             document.write(`<tr><td>${coche.marca}</td><td>${coche.modelo}</td><td>${coche.caballos}</td><td>${coche.color}</td></tr>`);
         });
         document.write("</table>");
-
-        
 
     </script>
 </head>
