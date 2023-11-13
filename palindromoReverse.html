@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var palabra=prompt("Introduzca palabra a comprobar");
+        //utilizando reverse
+        var comprobar=(palabra) =>{
+            let palabraSinEspacios=palabra.replace(/\s/g,"").toLowerCase();
+            let invertida=palabraSinEspacios.split("").reverse("").join("");
+            console.log(invertida);
+            if(palabra==invertida){
+                return true;
+            }else{
+                return false;
+            }
+        };
+        if(comprobar(palabra)){
+            console.log("Si es palindromo");
+        }else{
+            console.log("No es palindromo");
+        }
+
+        //Sin utilizar .reverse
+        var averiguar=(palabra) =>{
+            let palabra2=palabra.replace(/\s/g,"").toLowerCase();
+            let invertida2="";
+            for (let index = palabra2.length; index >= 0; index--) {
+                let letra=palabra2.charAt(index);
+                invertida2+=letra;
+            }
+            console.log(invertida2);
+            if(palabra==invertida2){
+                return true;
+            }else{
+                return false;
+            }
+        };
+
+        if(averiguar(palabra)){
+            console.log("Si es palindromo");
+        }else{
+            console.log("No es palindromo");
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
