@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var contarVocales=(cadena)=>{
+            cadena=cadena.toLowerCase();
+            var vocales=cadena.match(/[aeiouAEIOU]/g);
+            return vocales.length;
+        }
+        var cadena1=prompt("Introduzca primera cadena a comparar");
+        var cadena2=prompt("Introduzca segunda cadena a comparar");
+        var vocales1=contarVocales(cadena1);
+        var vocales2=contarVocales(cadena2);
+        if(vocales1>vocales2){
+            console.log("La primera cadena es mayor");
+        }
+        else if(vocales1===vocales2){
+            console.log("Las cadenas son iguales");
+        }
+        else{
+            console.log("La segunda cadena es mayor");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
