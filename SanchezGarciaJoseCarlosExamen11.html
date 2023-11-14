@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="José Carlos Sánchez García">
+    <title>Document</title>
+    <script>
+
+        //Punto 1
+        class Producto{
+           constructor(id, nombre, cantidad){
+             this.id=id;
+             this.nombre=nombre;
+             this.cantidad=cantidad;
+           }
+
+            formatearNombre(){
+            let letra=this.nombre.charAt(0);
+            letra=letra.toUpperCase();
+            this.nombre=this.nombre.replace(this.nombre.charAt(0), letra);
+            return this.nombre;
+           }
+
+            
+        };
+        
+        //Punto 2
+        obtenerDatosProducto=()=>{
+            var ID=prompt("Ingrese ID del producto.");
+            var IDint=parseInt(ID);
+
+            var Nombre=prompt("Ingrese nombre del producto.");
+            
+            var Cantidad=prompt("Ingrese cantidad del producto.")
+            var CantidadInt=parseInt(Cantidad);
+
+             producto1=new Producto(IDint, Nombre, CantidadInt);
+            return producto1;
+           }
+
+        var producto2=obtenerDatosProducto(); 
+        producto2.formatearNombre();
+
+        var producto3=obtenerDatosProducto();
+        producto3.formatearNombre();
+
+        var producto4=obtenerDatosProducto();
+        producto4.formatearNombre();
+
+        var producto5=obtenerDatosProducto();
+        producto5.formatearNombre();
+
+        var producto6=obtenerDatosProducto();
+        producto6.formatearNombre();
+        
+        var inventario=[];
+
+        inventario.push(producto2);
+        inventario.push(producto3);
+        inventario.push(producto4);
+        inventario.push(producto5);
+        inventario.push(producto6);
+
+        //console.log añadido para la revisión del proceso durante la ejecución.
+        console.log(inventario);
+
+
+        //Punto3
+        function obtenerStock(inventario){
+           var inventarioMap=new Map();
+           for (let index = 0; index < inventario.length; index++) { 
+            var nombreMap=inventario[index].nombre;
+            if(inventarioMap.has(nombreMap)){
+              var cantidadMap =  inventarioMap.get(nombreMap)+inventario[index].cantidad;
+            }
+            else{
+              var cantidadMap=inventario[index].cantidad;  
+            }
+            
+            inventarioMap.set(nombreMap, cantidadMap);
+           }
+           return inventarioMap;
+        };
+
+        var mapeado=obtenerStock(inventario);
+
+
+
+        //Punto 4
+        function escribirResultadoConFormato(mapeado){
+            console.log("Inventario acumulado");
+            for (const [nombre, cantidad] of mapeado) {
+                console.log(`${nombre} => ${cantidad}`);
+            }
+        }
+
+        escribirResultadoConFormato(mapeado);
+        
+        
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
