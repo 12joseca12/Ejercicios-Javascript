@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Coche{
+            constructor(marca, modelo, año, color, precio){
+                this.marca=marca;
+                this.modelo=modelo;
+                this.año=año;
+                this.color=color;
+                this.precio=precio;
+            }
+        }
+
+        var coche1=new Coche("Seat", "Leon", 2019, "Blanco perla", 15);
+        var coche2=new Coche("Nissan", "GTR34", 2002, "Plateado", 17);
+        var coche3=new Coche("Toyota", "Supra", 2000, "Naranja", 16);
+
+        var garaje= new Set([coche1, coche2, coche3]);
+
+        var precios=new Map();
+
+        for (const coche of garaje) {
+            precios.set(`${coche.marca} ${coche.modelo}`, coche.precio);
+        }
+
+        var mostrarInformacionCoche=(garaje)=>{
+            for (const coche of garaje) {
+               var info= coche.marca+" "+coche.modelo+" del año "+coche.año+" pintado en "+coche.color+" y a un precio de: "+coche.precio+"k";
+               console.log(info);
+            }
+        };
+
+        mostrarInformacionCoche(garaje);
+
+        var arrayGaraje=Array.from(garaje);
+
+        var cocheMasCaro =arrayGaraje.reduce((cocheActual, cocheSiguiente)=>{
+             return cocheActual.precio>cocheSiguiente.precio ? cocheActual : cocheSiguiente;
+        });
+        console.log("El coche más caro es: ", cocheMasCaro);
+
+        var cocheCaro=arrayGaraje[0];
+        for (let index = 0; index < arrayGaraje.length; index++) {
+            var cocheActual=arrayGaraje[index];
+            if(cocheActual.precio>cocheCaro.precio){
+                cocheCaro=cocheActual;
+            }
+            
+        }
+        console.log("El coche más caro sin utilizar reduce es: ", cocheCaro);
+
+        var precioMax=prompt("Introduzca su precio máximo teniendo en cuenta solo los miles");
+        for (const coche of arrayGaraje) {
+            if(precioMax>=coche.precio){
+                console.log(`El coche ${coche.marca} ${coche.modelo} cumple su limite de precio`);
+            }
+        };
+
+        class CocheDeportivo extends Coche{
+            constructor(marca, modelo, año, color, precio, velocidadMax, aceleracion){
+                super(marca, modelo, año, color, precio);
+                this.velocidadMax=velocidadMax;
+                this.aceleracion=aceleracion;
+            }
+        }
+
+        var coche4=("Nissan", "NRX", 1999, "Naranja y negro", 20, 498, 1.4);
+        garaje.add(coche4);
+
+        console.log(garaje);
+
+       function agregarCoche(coche) {
+        garaje.add(coche);
+        console.log(`¡${coche.marca} ${coche.modelo} ha sido agregado al garaje!`);
+        }
+
+        function eliminarCoche(coche) {
+        if (garaje.has(coche)) {
+            garaje.delete(coche);
+            console.log(`¡${coche.marca} ${coche.modelo} ha sido eliminado del garaje!`);
+        } else {
+            console.log(`El coche ${coche.marca} ${coche.modelo} no está en el garaje.`);
+        }
+        }
+
+        function mostrarCoches() {
+        console.log("Coches en el garaje:");
+        this.garaje.forEach(coche => {
+            console.log(`${coche.marca} ${coche.modelo}`);
+        });
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cadena=prompt("Introduzca Cadena");
+        var invertir=(cadena)=>{
+        cadena=cadena.replace(/\s/g,"").toLowerCase();
+        var invertida="";
+        for (let index = cadena.length; index >= 0; index--) {
+            var letra=cadena.charAt(index);
+            invertida+=letra; 
+        }
+        if(invertida===cadena){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+        }
+
+        if(invertir(cadena)){
+            console.log("Son palindromos");
+        }
+        else{
+            console.log("No son palindromos"); 
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

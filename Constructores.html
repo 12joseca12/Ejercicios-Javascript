@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Telefono{
+            constructor(CPU, RAM, almacenamiento, ancho, alto, numCamaras){
+                this.CPU=CPU;
+                this.RAM=RAM;
+                this.almacenamiento=almacenamiento;
+                this.ancho=ancho;
+                this.alto=alto;
+                this.numCamaras=numCamaras;
+            }
+            toString(){
+                return `Teléfono: CPU - ${this.CPU}, RAM - ${this.RAM}, Almacenamiento - ${this.almacenamiento}, Ancho - ${this.ancho}, Alto - ${this.alto}, Número de Cámaras - ${this.numCamaras}`;
+            }
+        }
+        const telefono1 = new Telefono("Snapdragon", "8 GB", "128 GB", 6, 5, 3);
+        const telefono2 = new Telefono("Exynos", "6 GB", "64 GB", 5.5, 4.7, 2);
+        const telefono3 = new Telefono("MediaTek", "12 GB", "256 GB", 6.2, 5.8, 4);
+        const telefono4 = new Telefono("Apple A14", "4 GB", "256 GB", 5.8, 6.1, 2);
+        
+        var arr=[telefono1,telefono2, telefono3, telefono4];
+        arr.forEach(telefono => {
+            console.log(telefono.toString());
+        });
+
+        Telefono.prototype.precio=0;
+        arr.forEach(telefono=>{
+            var pr=Math.floor((Math.random()*1000)+1);
+           telefono.precio=pr;console.log(telefono.toString()+` Precio - ${telefono.precio}`);
+        });
+
+        var shuffle=(arr)=>{
+            for (let index = 0; index < arr.length; index++) {
+                const j=Math.floor(Math.random()*(index+1));
+                [arr[index], arr[j]]=[arr[j], arr[index]];
+            }
+        };
+
+        shuffle(arr);
+        arr.forEach(telefono => {
+            console.log(telefono.toString()+` Precio - ${telefono.precio}`);
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
