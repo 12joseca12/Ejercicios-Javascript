@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempos</title>
+    <script>
+        function preguntaUsuario() {
+           const inicio = new Date();
+           const respuesta = prompt('¿Cómo te llamas?');
+           const fin = new Date();
+           const tiempoRespuesta = fin - inicio;
+           console.log(`Hola, ${respuesta}! Tardaste ${tiempoRespuesta / 1000} segundos en responder.`);
+           const tiempoTotal = new Date() - tiempoInicio;
+           console.log(`El programa tardó ${tiempoTotal / 1000} segundos en ejecutarse.`);
+        }
+
+  
+        const tiempoInicio = new Date();
+
+        preguntaUsuario();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

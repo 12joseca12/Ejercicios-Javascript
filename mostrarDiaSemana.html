@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function obtenerDiaSemana() {
+           const fechaActual = new Date();
+           const diaSemana = fechaActual.getDay();
+           const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+           const nombreDia = diasSemana[diaSemana];
+           console.log(`Hoy es ${nombreDia}.`);
+        }
+
+        obtenerDiaSemana();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

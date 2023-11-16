@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function obtenerNombreMes() {
+             const fechaActual = new Date();
+             const numeroMes = fechaActual.getMonth();
+             const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+             const nombreMes = meses[numeroMes];
+             console.log(`Estamos en el mes de ${nombreMes}.`);
+        }
+
+        obtenerNombreMes();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
