@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Trigonometría {
+  seno(angulo) {
+    return Math.sin(angulo);
+  }
+
+  coseno(angulo) {
+    return Math.cos(angulo);
+  }
+
+  tangente(angulo) {
+    return Math.tan(angulo);
+  }
+
+  asin(valor) {
+    return Math.asin(valor);
+  }
+
+  acos(valor) {
+    return Math.acos(valor);
+  }
+
+  atan(valor) {
+    return Math.atan(valor);
+  }
+}
+
+const trigonometria = new Trigonometría();
+
+const cuartaPartePi = Math.PI / 4;
+
+console.log(`Seno de la cuarta parte de ∏: ${trigonometria.seno(cuartaPartePi)}`);
+console.log(`Coseno de la cuarta parte de ∏: ${trigonometria.coseno(cuartaPartePi)}`);
+console.log(`Tangente de la cuarta parte de ∏: ${trigonometria.tangente(cuartaPartePi)}`);
+
+console.log(`Arcoseno de 0.5: ${trigonometria.asin(0.5)}`);
+console.log(`Arcocoseno de 0.5: ${trigonometria.acos(0.5)}`);
+
+console.log(`Arcotangente de 1: ${trigonometria.atan(1)}`);
+
+    </script>
+</body>
+</html>

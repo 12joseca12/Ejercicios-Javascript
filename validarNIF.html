@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validarNIF(nif) {
+  const patronNIF = /^\d{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/;
+  return patronNIF.test(nif);
+}
+
+const nifUsuario = prompt("Ingrese su NIF:");
+if (validarNIF(nifUsuario)) {
+  console.log("El NIF es válido.");
+} else {
+  console.log("El NIF no es válido.");
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

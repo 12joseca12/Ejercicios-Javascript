@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validarCorreoElectronico(correo) {
+  const patronCorreo = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return patronCorreo.test(correo);
+}
+
+const correoUsuario = prompt("Ingrese su dirección de correo electrónico:");
+if (validarCorreoElectronico(correoUsuario)) {
+  console.log("La dirección de correo electrónico es válida.");
+} else {
+  console.log("La dirección de correo electrónico no es válida.");
+}
+
+    </script>
+</body>
+</html>

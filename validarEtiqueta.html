@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Etiqueta {
+  constructor(nombre, referencia) {
+    this.nombre = nombre;
+    this.referencia = referencia;
+  }
+
+  mostrarArticulo() {
+    console.log(`Nombre del artículo: ${this.nombre}`);
+    console.log(`Referencia del artículo: ${this.referencia}`);
+  }
+
+  validarEtiqueta() {
+    const patronEtiqueta = /^\d{4}-[a-zA-Z]{5}[a-zA-Z]\/\d{2}_\d$/;
+    return patronEtiqueta.test(this.referencia);
+  }
+}
+
+const articulo = new Etiqueta("Producto Ejemplo", "2022-xrFdS/25_9");
+
+articulo.mostrarArticulo();
+
+if (articulo.validarEtiqueta()) {
+  console.log("La etiqueta es válida.");
+} else {
+  console.log("La etiqueta no es válida.");
+}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
